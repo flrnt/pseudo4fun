@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Fake name:</strong>
+  <%= @pseudo.fake_name %>
+</p>
+
+<p>
+  <strong>Real name:</strong>
+  <%= @pseudo.real_name %>
+</p>
+
+<p>
+  <strong>Votes:</strong>
+  <%= @pseudo.votes %>
+</p>
+
+<%= link_to 'Edit', edit_pseudo_path(@pseudo) %> |
+<%= link_to 'Back', pseudos_path %>
