@@ -5,8 +5,8 @@
 <table>
   <thead>
     <tr>
-      <th>Fake name</th>
-      <th>Real name</th>
+      <th>Fake</th>
+      <th>Real</th>
       <th>Votes</th>
       <th colspan="3"></th>
     </tr>
@@ -18,6 +18,8 @@
         <td><%= pseudo.fake_name %></td>
         <td><%= pseudo.real_name %></td>
         <td><%= pseudo.votes %></td>
+        <td><%= link_to 'Upvote',  %></td>
+        <td><%= link_to 'Downvote',  %></td>
         <td><%= link_to 'Show', pseudo %></td>
         <td><%= link_to 'Edit', edit_pseudo_path(pseudo) %></td>
         <td><%= link_to 'Destroy', pseudo, method: :delete, data: { confirm: 'Are you sure?' } %></td>

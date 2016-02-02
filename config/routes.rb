@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  resources :pseudos
+  resources :pseudos do
+    post 'upvote'
+    post 'downvote'
+  end
 end

@@ -17,6 +17,18 @@ class PseudosController < ApplicationController
     @pseudo = Pseudo.new
   end
 
+  def upvote
+    @pseudo = Pseudo.find(params[:pseudo_id])
+    @pseudo.votes += 1
+    @pseudo.save
+  end
+
+  def downvote
+    @pseudo = Pseudo.find(params[:pseudo_id])
+    @pseudo.votes -= 1
+    @pseudo.save
+  end
+
   # GET /pseudos/1/edit
   def edit
   end
