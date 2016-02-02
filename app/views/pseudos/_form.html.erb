@@ -1,29 +1,13 @@
-<%= form_for(@pseudo) do |f| %>
-  <% if @pseudo.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@pseudo.errors.count, "error") %> prohibited this pseudo from being saved:</h2>
-
-      <ul>
-      <% @pseudo.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
+<div class="form-group">
+  <%= form_for(@pseudo) do |f| %>
+      <div class="form-group">
+        <%= f.label :fake_name %>
+        <%= f.text_field :fake_name, class:'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label :real_name %>
+        <%= f.text_field :real_name, class:'form-control' %>
+      </div>
+      <%= f.submit class:'btn btn-default' %>
   <% end %>
-
-  <div class="field">
-    <%= f.label :fake_name %><br>
-    <%= f.text_field :fake_name %>
-  </div>
-  <div class="field">
-    <%= f.label :real_name %><br>
-    <%= f.text_field :real_name %>
-  </div>
-  <div class="field">
-    <%= f.label :votes %><br>
-    <%= f.number_field :votes %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+</div>
