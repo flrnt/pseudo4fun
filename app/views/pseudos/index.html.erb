@@ -1,33 +1,22 @@
 <p id="notice"><%= notice %></p>
-
-<h1>Listing Pseudos</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Fake</th>
-      <th>Real</th>
-      <th>Votes</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @pseudos.each do |pseudo| %>
-      <tr>
-        <td><%= pseudo.fake_name %></td>
-        <td><%= pseudo.real_name %></td>
-        <td><%= pseudo.votes %></td>
-        <td><%= link_to 'Upvote',  %></td>
-        <td><%= link_to 'Downvote',  %></td>
-        <td><%= link_to 'Show', pseudo %></td>
-        <td><%= link_to 'Edit', edit_pseudo_path(pseudo) %></td>
-        <td><%= link_to 'Destroy', pseudo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
 <%= link_to 'New Pseudo', new_pseudo_path %>
+<h1 class='text-center maintitle'>liste</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+      <ul class="list-group">
+        <% @pseudos.each do |pseudo| %>
+          <li class="list-group-item">
+            <span class="badge">
+              <%= pseudo.votes %>
+            </span>
+            <h2>
+              <%= pseudo.fake_name %>
+            </h2>
+            <%= link_to 'vote', pseudo_upvote_path(pseudo), method: 'post', class:'btn btn-default' %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>

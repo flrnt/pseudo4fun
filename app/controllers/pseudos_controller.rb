@@ -21,12 +21,7 @@ class PseudosController < ApplicationController
     @pseudo = Pseudo.find(params[:pseudo_id])
     @pseudo.votes += 1
     @pseudo.save
-  end
-
-  def downvote
-    @pseudo = Pseudo.find(params[:pseudo_id])
-    @pseudo.votes -= 1
-    @pseudo.save
+    redirect_to root_path
   end
 
   # GET /pseudos/1/edit
@@ -37,15 +32,10 @@ class PseudosController < ApplicationController
   # POST /pseudos.json
   def create
     @pseudo = Pseudo.new(pseudo_params)
-
-    respond_to do |format|
-      if @pseudo.save
-        format.html { redirect_to @pseudo, notice: 'Pseudo was successfully created.' }
-        format.json { render :show, status: :created, location: @pseudo }
-      else
-        format.html { render :new }
-        format.json { render json: @pseudo.errors, status: :unprocessable_entity }
-      end
+    if @pseudo.save
+      redirect_to "/"
+    else
+      render :new
     end
   end
 
