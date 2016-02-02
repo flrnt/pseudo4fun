@@ -1,20 +1,31 @@
 <p id="notice"><%= notice %></p>
-<%= link_to 'New Pseudo', new_pseudo_path %>
 
-<h1 class='text-center maintitle'>liste</h1>
+
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
       <ul class="list-group">
+        <div class="list-group-item active">
+          <h2>pseudos</h2>
+          <%= link_to new_pseudo_path do%>
+            <i class="glyphicon glyphicon-plus-sign"></i>
+          <% end %>
+        </div>
         <% @pseudos.each do |pseudo| %>
           <li class="list-group-item">
             <span class="badge">
+              <%= link_to pseudo_upvote_path(pseudo), method: 'post' do %>
+                <i class="glyphicon glyphicon-triangle-top"></i>
+              <% end %>
               <%= pseudo.votes %>
             </span>
-            <h2>
+
+            <h3>
               <%= pseudo.fake_name %>
-            </h2>
-            <%= link_to 'vote', pseudo_upvote_path(pseudo), method: 'post', class:'btn btn-default' %>
+            </h3>
+            <%= link_to pseudo_path(pseudo) do %>
+              <i class="glyphicon glyphicon-option-vertical"></i>
+            <% end %>
           </li>
         <% end %>
       </ul>

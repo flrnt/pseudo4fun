@@ -1,4 +1,5 @@
 body {
+  padding: 30px;
   background-color: #fff;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
@@ -71,17 +72,49 @@ div {
     list-style: square;
   }
 }
-.maintitle {
-  text-transform: uppercase;
+
+h2, h3 {
+  margin:0;
+}
+h3 {
+  font-size: 22px;
 }
 
 .badge {
-  font-size: 25px;
-  background-color: #AB9312;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 13px;
+  color: gold;
+  border-radius: 3px;
+  width:35px;
+  height: 45px;
+  background-color: #3175B0;
 }
 
 .list-group-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.glyphicon-plus-sign {
+  font-size: 18px;
+  color: white;
+}
+.glyphicon-triangle-top {
+  color: gold;
+  margin-bottom: 5px;
+}
+.list-group-item h2 {
+  text-align: center;
+  margin-left: 22px;
+  flex-grow: 1;
+}
+.glyphicon-option-vertical {
+  font-size: 16px;
+}
+.glyphicon-option-vertical:hover {
+  // font-size: 16px;
+  transform: scale(1.1);
 }
