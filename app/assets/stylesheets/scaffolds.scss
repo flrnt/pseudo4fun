@@ -98,13 +98,20 @@ h3 {
   justify-content: space-between;
   align-items: center;
 }
-.glyphicon-plus-sign {
+.glyphicon-plus {
   font-size: 18px;
   color: white;
 }
+.glyphicon-plus:hover {
+  transform: scale(1.1);
+}
+
 .glyphicon-triangle-top {
   color: gold;
   margin-bottom: 5px;
+}
+.glyphicon-triangle-top:hover {
+  transform: scale(1.2);
 }
 .list-group-item h2 {
   text-align: center;
@@ -113,8 +120,14 @@ h3 {
 }
 .glyphicon-option-vertical {
   font-size: 16px;
+  color:#C5C5C5;
 }
 .glyphicon-option-vertical:hover {
   // font-size: 16px;
-  transform: scale(1.1);
+  transform: scale(1.15);
+}
+a:hover {
+  // color:black;
+  background-color: transparent;
+  text-decoration: none;
 }
