@@ -73,7 +73,7 @@ div {
   }
 }
 
-h2, h3 {
+h2, h3, h5 {
   margin:0;
 }
 h3 {
@@ -113,9 +113,8 @@ h3 {
 .glyphicon-triangle-top:hover {
   transform: scale(1.2);
 }
-.list-group-item h2 {
+.list-group-item h3 {
   text-align: center;
-  margin-left: 22px;
   flex-grow: 1;
 }
 .glyphicon-option-vertical {
@@ -132,4 +131,8 @@ a:hover {
 }
 .panel-body span {
   color:#A5A7A5;
+}
+.panel-heading {
+  display: flex;
+  justify-content: space-between;
 }

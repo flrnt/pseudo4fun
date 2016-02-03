@@ -4,7 +4,12 @@
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
       <div class="panel panel-success">
-        <div class="panel-heading">Last entries</div>
+        <div class="panel-heading">
+          <h5>Last entries</h5>
+          <%= link_to new_pseudo_path do%>
+            new pseudo ?
+          <% end %>
+        </div>
         <div class="panel-body">
           <ul>
             <% @last_pseudos.each do |pseudo| %>
@@ -17,10 +22,7 @@
       </div>
       <ul class="list-group">
         <div class="list-group-item active">
-          <h2>pseudos</h2>
-          <%= link_to new_pseudo_path do%>
-            <i class="glyphicon glyphicon-plus"></i>
-          <% end %>
+          <h3>pseudos</h3>
         </div>
         <% @pseudos.each do |pseudo| %>
           <li class="list-group-item">
