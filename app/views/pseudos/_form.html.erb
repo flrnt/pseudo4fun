@@ -1,11 +1,11 @@
 <div class="form-group">
   <%= form_for(@pseudo) do |f| %>
       <div class="form-group">
-        <%= f.label :fake_name %>
+        <%= f.label :fake_name, "pseudo" %>
         <%= f.text_field :fake_name, class:'form-control' %>
       </div>
       <div class="form-group">
-        <%= f.label :real_name %>
+        <%= f.label :real_name, "who?" %>
         <%= f.text_field :real_name, class:'form-control' %>
       </div>
       <%= f.submit class:'btn btn-default' %>
