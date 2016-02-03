@@ -1,18 +1,13 @@
 class PseudosController < ApplicationController
   before_action :set_pseudo, only: [:show, :edit, :update, :destroy]
 
-  # GET /pseudos
-  # GET /pseudos.json
   def index
-    @pseudos = Pseudo.all
+    @pseudos = Pseudo.all.sort_by { |pseudo| pseudo.votes }.reverse
   end
 
-  # GET /pseudos/1
-  # GET /pseudos/1.json
   def show
   end
 
-  # GET /pseudos/new
   def new
     @pseudo = Pseudo.new
   end
@@ -24,12 +19,9 @@ class PseudosController < ApplicationController
     redirect_to root_path
   end
 
-  # GET /pseudos/1/edit
   def edit
   end
 
-  # POST /pseudos
-  # POST /pseudos.json
   def create
     @pseudo = Pseudo.new(pseudo_params)
     if @pseudo.save
@@ -39,8 +31,6 @@ class PseudosController < ApplicationController
     end
   end
 
-  # PATCH/PUT /pseudos/1
-  # PATCH/PUT /pseudos/1.json
   def update
     respond_to do |format|
       if @pseudo.update(pseudo_params)
@@ -53,8 +43,6 @@ class PseudosController < ApplicationController
     end
   end
 
-  # DELETE /pseudos/1
-  # DELETE /pseudos/1.json
   def destroy
     @pseudo.destroy
     respond_to do |format|
