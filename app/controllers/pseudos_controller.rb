@@ -3,6 +3,7 @@ class PseudosController < ApplicationController
 
   def index
     @pseudos = Pseudo.all.sort_by { |pseudo| pseudo.votes }.reverse
+    @last_pseudos = Pseudo.last(3).reverse
   end
 
   def show
