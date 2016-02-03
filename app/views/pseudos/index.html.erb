@@ -5,7 +5,7 @@
     <div class="col-sm-6 col-sm-offset-3">
       <div class="panel panel-success">
         <div class="panel-heading">
-          <h5>Last entries</h5>
+          <h5><strong>Last entries</strong></h5>
           <%= link_to new_pseudo_path do%>
             new pseudo ?
           <% end %>
@@ -22,7 +22,8 @@
       </div>
       <ul class="list-group">
         <div class="list-group-item active">
-          <h3>pseudos</h3>
+          <h5><strong>pseudos</strong></h5>
+          <span>Total : <%= @pseudos.count %></span>
         </div>
         <% @pseudos.each do |pseudo| %>
           <li class="list-group-item">
