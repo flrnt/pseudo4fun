@@ -89,11 +89,12 @@ h3 {
   align-items: center;
   flex-direction: column;
   font-size: 13px;
-  color: gold;
+  color: black;
   border-radius: 3px;
-  width:35px;
+  width:40px;
   height: 45px;
-  background-color: #3175B0;
+  border: 1px solid #F5F5F5;
+  background-color: #fff;
 }
 
 .list-group-item {
@@ -102,7 +103,8 @@ h3 {
   align-items: center;
 }
 .glyphicon-triangle-top {
-  color: gold;
+  color: black;
+  font-size: 17px;
   margin-bottom: 5px;
 }
 .glyphicon-triangle-top:hover {
