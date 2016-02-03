@@ -9,7 +9,7 @@
           <ul>
             <% @last_pseudos.each do |pseudo| %>
               <li>
-                <%= "#{pseudo.fake_name} (#{time_ago_in_words(pseudo.created_at)} ago)" %>
+                <strong><%="#{pseudo.fake_name}"%></strong> <span><%="(#{time_ago_in_words(pseudo.created_at)} ago)" %></span>
               </li>
             <% end %>
           </ul>
