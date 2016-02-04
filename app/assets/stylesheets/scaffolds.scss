@@ -83,12 +83,12 @@ h3 {
   font-size: 22px;
 }
 
-.badge {
+.btn-upvote {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  font-size: 13px;
+  font-size: 15px;
   color: black;
   border-radius: 3px;
   width:40px;
@@ -102,23 +102,29 @@ h3 {
   justify-content: space-between;
   align-items: center;
 }
+.list-group-item span {
+  font-weight: bold;
+}
 .glyphicon-triangle-top {
   color: black;
   font-size: 17px;
-  margin-bottom: 5px;
+  transition: all 200ms ease-in-out;
 }
 .glyphicon-triangle-top:hover {
+  color:#41F3FF;
   transform: scale(1.2);
 }
+
 .glyphicon-option-vertical {
   font-size: 16px;
   color:#C5C5C5;
+  transition: all 200ms ease-in-out;
 }
 .glyphicon-option-vertical:hover {
   transform: scale(1.15);
 }
 a:hover {
-  color:black;
+  color:#333;
   background-color: transparent;
   text-decoration: none;
 }

@@ -27,7 +27,7 @@
         </div>
         <% @pseudos.each do |pseudo| %>
           <li class="list-group-item">
-            <span class="badge">
+            <span class="btn-upvote">
               <%= link_to pseudo_upvote_path(pseudo), method: 'post' do %>
                 <i class="glyphicon glyphicon-triangle-top"></i>
               <% end %>
