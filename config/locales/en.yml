@@ -20,4 +20,14 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      pseudo:
+        fake_name: "pseudo"
+    errors:
+      models:
+        pseudo:
+          attributes:
+            fake_name:
+              blank: "ne peut être vide"
+              taken: "existe déjà"

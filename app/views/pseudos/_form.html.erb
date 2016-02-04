@@ -1,5 +1,18 @@
 <div class="form-group">
+
   <%= form_for(@pseudo) do |f| %>
+    <% if @pseudo.errors.any? %>
+      <div class="alert alert-danger alert-dismissible" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4>Fish!</h4>
+        <ul>
+        <% @pseudo.errors.full_messages.each do |message| %>
+          <li>Le champ <%= message %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
       <div class="form-group">
         <%= f.label :fake_name, "pseudo" %>
         <%= f.text_field :fake_name, placeholder: "make me laugh", class:'form-control' %>
