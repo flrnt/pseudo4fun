@@ -27,17 +27,18 @@
         </div>
         <% @pseudos.each do |pseudo| %>
           <li class="list-group-item">
-
             <span class="badge">
               <%= link_to pseudo_upvote_path(pseudo), method: 'post' do %>
                 <i class="glyphicon glyphicon-triangle-top"></i>
               <% end %>
               <%= pseudo.votes %>
             </span>
-
             <h3>
               <%= pseudo.fake_name %>
             </h3>
+            <% if pseudo.created_at - Time.now > -86400 %>
+              <span class="label label-success label-new">NEW</span>
+            <% end %>
             <%= link_to pseudo_path(pseudo) do %>
               <i class="glyphicon glyphicon-option-vertical"></i>
             <% end %>
