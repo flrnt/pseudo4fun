@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
 
+<div class="logo">
+  pseudo<span>4</span>fun.
+</div>
+
 <div class="container">
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
@@ -20,31 +24,24 @@
           </ul>
         </div>
       </div>
-      <ul class="list-group">
-        <div class="list-group-item active">
+      <div class="panel panel-default">
+        <div class="panel-heading">
           <h5><strong>pseudos</strong></h5>
-          <span>total : <%= @pseudos.count %></span>
+          <span class="badge">total : <%= @pseudos.count %></span>
         </div>
         <% @pseudos.each do |pseudo| %>
-          <li class="list-group-item">
-            <span class="btn-upvote">
-              <%= link_to pseudo_upvote_path(pseudo), method: 'post' do %>
-                <i class="glyphicon glyphicon-triangle-top"></i>
-              <% end %>
-              <%= pseudo.votes %>
-            </span>
-            <h3>
-              <%= pseudo.fake_name %>
-            </h3>
-            <% if pseudo.created_at - Time.now > -86400 %>
-              <span class="label label-success label-new">NEW</span>
+          <div class="item">
+            <%= link_to pseudo_upvote_path(pseudo), class:'item-upvote', method: 'post' do %>
+              <div class="item-arrow"></div>
+              <div class='item-count'><%= pseudo.votes %></div>
             <% end %>
-            <%= link_to pseudo_path(pseudo) do %>
-              <i class="glyphicon glyphicon-option-vertical"></i>
-            <% end %>
-          </li>
+            <div class='item-body'>
+              <h3><%= pseudo.fake_name %></h3>
+              <p><%= pseudo.real_name %></p>
+            </div>
+          </div>
         <% end %>
-      </ul>
+      </div>
     </div>
   </div>
 </div>

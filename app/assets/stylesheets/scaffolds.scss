@@ -1,15 +1,23 @@
+// Google fonts
+@import url("https://fonts.googleapis.com/css?family=Varela+Round");
+$base-font: "Varela Round", sans-serif;
+$base-color: #384047;
+$dark-blue: #637a91;
+$green: #3ac162;
+$red: #EB585C;
+$bg-gray: #EDEFF0;
+
 body {
   padding: 30px;
-  background-color: #fff;
-  color: #333;
-  font-family: verdana, arial, helvetica, sans-serif;
+  color: $base-color;
+  font-family: $base-font;
   font-size: 13px;
   line-height: 18px;
-  background-color: #F5F5F5;
+  background-color: $bg-gray;
 }
 
 p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
+  font-family: $base-font;
   font-size: 13px;
   line-height: 18px;
 }
@@ -20,19 +28,6 @@ pre {
   font-size: 11px;
 }
 
-a {
-  color: #000;
-
-  &:visited {
-    color: #666;
-  }
-
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
-}
-
 div {
   &.field, &.actions {
     margin-bottom: 10px;
@@ -40,18 +35,18 @@ div {
 }
 
 #notice {
-  color: green;
+  color: $green;
 }
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
+  background-color: $red;
   display: table;
 }
 
 #error_explanation {
   width: 450px;
-  border: 2px solid red;
+  border: 2px solid $red;
   padding: 7px;
   padding-bottom: 0;
   margin-bottom: 20px;
@@ -64,7 +59,7 @@ div {
     font-size: 12px;
     margin: -7px;
     margin-bottom: 0px;
-    background-color: #c00;
+    background-color: $red;
     color: #fff;
   }
 
@@ -82,21 +77,6 @@ h2, h3, h5 {
 h3 {
   font-size: 22px;
 }
-
-.btn-upvote {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  font-size: 15px;
-  color: black;
-  border-radius: 3px;
-  width:40px;
-  height: 45px;
-  border: 1px solid #F5F5F5;
-  background-color: #fff;
-}
-
 .list-group-item {
   display: flex;
   justify-content: space-between;
@@ -105,43 +85,55 @@ h3 {
 .list-group-item span {
   font-weight: bold;
 }
-.glyphicon-triangle-top {
-  color: black;
-  font-size: 17px;
-  transition: all 200ms ease-in-out;
-}
-.glyphicon-triangle-top:hover {
-  color:#41F3FF;
-  transform: scale(1.2);
-}
-
-.glyphicon-option-vertical {
-  font-size: 16px;
-  color:#C5C5C5;
-  transition: all 200ms ease-in-out;
-}
-.glyphicon-option-vertical:hover {
-  transform: scale(1.15);
-}
-a:hover {
-  color:#333;
-  background-color: transparent;
-  text-decoration: none;
+.panel {
+  border: none !important;
+  box-shadow: 0 2px 0 0 rgba(0,0,0,0.1) !important;
 }
 .panel-body span {
   color:#A5A7A5;
 }
-.panel-heading {
-  display: flex;
-  justify-content: space-between;
+.panel-success {
+  border-color: $green !important;
+  .panel-heading {
+    display: flex;
+    justify-content: space-between;
+    color: white !important;
+    background-color: $green !important;
+    border-color: $green !important;
+    background-image: none !important;
+    border-bottom: none !important;
+    a {
+      color: white !important;
+    }
+  }
 }
-.realname {
-  color:#C5C5C5;
+.panel-default {
+  border-color: $dark-blue !important;
+  .panel-heading {
+    display: flex;
+    justify-content: space-between;
+    color: white !important;
+    background-color: $dark-blue !important;
+    border-color: $dark-blue !important;
+    background-image: none !important;
+    border-bottom: none !important;
+    a {
+      color: white !important;
+    }
+    .badge {
+      color: white !important;
+      background-color: #546777 !important;
+    }
+  }
 }
-
 
 .label-new {
   position: absolute;
   top: 25px;
   left: 90px;
+  padding: 1px 5px;
+  font-size: 10px;
+  color: #fff;
+  background-color: $green;
+  border-radius: 4px;
 }

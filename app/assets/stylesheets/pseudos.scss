@@ -1,3 +1,135 @@
 // Place all the styles related to the pseudos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+// Google fonts
+@import url("https://fonts.googleapis.com/css?family=Varela+Round");
+$base-font: "Varela Round", sans-serif;
+$base-color: #384047;
+$dark-blue: #637a91;
+$green: #3ac162;
+$red: #EB585C;
+$bg-gray: #EDEFF0;
+
+.item {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+  background: white;
+}
+
+/* Body design */
+.item-body {
+  flex: 1 1 auto;
+}
+.item-body h3 {
+  font-weight: bold;
+  font-size: 23px;
+  margin-top: 0;
+}
+.item-body p {
+  font-weight: lighter;
+  color: #717f86;
+  margin-bottom: 0;
+}
+
+/* Product image */
+.item-image {
+  border-radius: 10px;
+  margin-right: 20px;
+  width: 45px;
+}
+
+/* Upvote design */
+.item-upvote {
+  padding-right: 20px;
+  text-align: center;
+  transition: all 0.15s ease;
+  font-weight: bold;
+  font-size: 13px;
+  line-height: 20px;
+}
+.item-count {
+  margin: 2px 0 0;
+  color: $base-color;
+  transition: all 0.15s ease;
+}
+.item-arrow {
+  transition: all 0.15s ease;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid transparent;
+  border-bottom: 9px solid $base-color;
+  border-radius: 2px;
+  margin: auto;
+}
+
+/* Controls design */
+.item-controls {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0px;
+}
+.item-controls a {
+  padding: 0 20px;
+  font-size: 17px;
+  color: $bg-gray;
+}
+.item-controls a:hover {
+  color: $red !important
+}
+.item-controls-hidden a {
+  color: transparent;
+  font-size: 15px;
+  transition: all 0.15s ease;
+  border-color: transparent;
+}
+
+/* Hover effects */
+.item:hover {
+  background: #f7f7fa;
+  cursor: pointer;
+}
+.item-upvote:hover {
+  color: $green;
+  cursor: pointer;
+  text-decoration: none;
+}
+.item:hover .item-upvote { transform: scale(1.2) }
+.item:hover .item-controls-hidden a { color: #E6E6E6 }
+.item-upvote:hover .item-arrow {
+  border-bottom: 9px solid $green;
+  color: $green;
+}
+.item-upvote:hover .item-count {
+  color: $green;
+}
+
+.btn-treehouse {
+  color: white;
+  padding: 10px 15px;
+  border-radius: 4px;
+  font-weight: bold;
+  background: lighten($green, 10%);
+  transition: background 0.3s ease;
+}
+.btn-treehouse:hover {
+  opacity: 1;
+  background: $green;
+  text-decoration: none;
+  color: white;
+}
+.logo {
+  color: $dark-blue;
+  margin: 40px 0 60px 0;
+  text-align: center;
+  font-weight: bold;
+  font-size: 45px;
+  span {
+    color: $green;
+  }
+}
