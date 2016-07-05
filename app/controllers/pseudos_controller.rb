@@ -26,7 +26,7 @@ class PseudosController < ApplicationController
   def create
     @pseudo = Pseudo.new(pseudo_params)
     if @pseudo.save
-      redirect_to "/"
+      redirect_to root_path
     else
       render :new
     end
