@@ -2,7 +2,8 @@ class PseudosController < ApplicationController
   before_action :set_pseudo, only: [:show, :edit, :update, :destroy]
 
   def index
-    @pseudos = Pseudo.all.sort_by { |pseudo| pseudo.votes }.reverse
+    @q = Pseudo.search(params[:q])
+    @pseudos = @q.result.sort_by { |pseudo| pseudo.votes }.reverse
     @last_pseudos = Pseudo.last(3).reverse
   end
 
@@ -26,7 +27,7 @@ class PseudosController < ApplicationController
   def create
     @pseudo = Pseudo.new(pseudo_params)
     if @pseudo.save
-      redirect_to "/"
+      redirect_to root_path
     else
       render :new
     end
