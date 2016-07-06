@@ -1,17 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<div class="logo">
+<%= link_to root_path, class:'logo' do %>
   pseudo<span>4</span>fun.
-</div>
-
+<% end %>
 
 
 <div class="container">
 
   <div class="row">
     <div class="col-sm-6 col-sm-offset-3">
-      <div class="search-form" id="search-form">
-        <%= search_form_for @q do |f| %>
+      <div class="search-form">
+        <%= search_form_for @q, id:"search-form" do |f| %>
           <i class="glyphicon glyphicon-search"></i>
           <%= f.search_field :fake_name_cont, placeholder: 'rechercher parmi les pseudos...' %>
           <%= f.submit "hit enter!", class:'btn' %>
@@ -21,7 +20,7 @@
         <div class="panel-heading">
           <h5><strong>last entries</strong></h5>
           <%= link_to new_pseudo_path do %>
-            new pseudo ?
+            new pseudo
           <% end %>
         </div>
         <div class="panel-body">
